@@ -1,0 +1,7 @@
+C:\Users\Admin\Source\Repos\helloworld\BaiThiCsharp\bin\Debug\BaiThiCsharp.exe.config
+C:\Users\Admin\Source\Repos\helloworld\BaiThiCsharp\bin\Debug\BaiThiCsharp.exe
+C:\Users\Admin\Source\Repos\helloworld\BaiThiCsharp\bin\Debug\BaiThiCsharp.pdb
+C:\Users\Admin\Source\Repos\helloworld\BaiThiCsharp\obj\Debug\BaiThiCsharp.csprojAssemblyReference.cache
+C:\Users\Admin\Source\Repos\helloworld\BaiThiCsharp\obj\Debug\BaiThiCsharp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\helloworld\BaiThiCsharp\obj\Debug\BaiThiCsharp.exe
+C:\Users\Admin\Source\Repos\helloworld\BaiThiCsharp\obj\Debug\BaiThiCsharp.pdb

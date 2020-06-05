@@ -1,0 +1,7 @@
+C:\Users\Admin\Source\Repos\helloworld\BaiTapNgay25_5_2020\bin\Debug\BaiTapNgay25_5_2020.exe.config
+C:\Users\Admin\Source\Repos\helloworld\BaiTapNgay25_5_2020\bin\Debug\BaiTapNgay25_5_2020.exe
+C:\Users\Admin\Source\Repos\helloworld\BaiTapNgay25_5_2020\bin\Debug\BaiTapNgay25_5_2020.pdb
+C:\Users\Admin\Source\Repos\helloworld\BaiTapNgay25_5_2020\obj\Debug\BaiTapNgay25_5_2020.csprojAssemblyReference.cache
+C:\Users\Admin\Source\Repos\helloworld\BaiTapNgay25_5_2020\obj\Debug\BaiTapNgay25_5_2020.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\helloworld\BaiTapNgay25_5_2020\obj\Debug\BaiTapNgay25_5_2020.exe
+C:\Users\Admin\Source\Repos\helloworld\BaiTapNgay25_5_2020\obj\Debug\BaiTapNgay25_5_2020.pdb

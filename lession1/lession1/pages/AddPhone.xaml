@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="lession1.pages.AddPhone"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:lession1.pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Margin="50">
+            <TextBox x:Name="txtName" Margin="30,20,10,0" Text="" TextWrapping="Wrap" Height="45" FontSize="20" PlaceholderText="Name : "/>
+            <TextBox x:Name="txtTel" Margin="30,20,10,0"  Text="" TextWrapping="Wrap" Height="45" FontSize="20" PlaceholderText="Telephone : "/>
+            <TextBlock Margin="30,20,10,0"  Text="Type Contact : " TextWrapping="Wrap" Height="45" FontSize="22"/>
+            <ComboBox x:Name="cbTypeContact" Margin="30,0,0,0" Width="250px">
+                <ComboBoxItem>Work</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Person</ComboBoxItem>
+                <ComboBoxItem>Love</ComboBoxItem>
+            </ComboBox>
+            <RelativePanel>
+                <Button x:Name="add" Margin="640,0,20,0" Content="Save" Height="45" Width="90" Click="Button_Click"/>
+                <Button RelativePanel.RightOf="add" Content="List Phone" Height="45" Width="90" Click="Button_Click_1"/>
+            </RelativePanel>
+
+        </StackPanel>
+    </Grid>
+</Page>

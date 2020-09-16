@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="lession1.pages.ListPhonexaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:lession1.pages"
+    xmlns:models="using:lession1.model"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <GridView x:ConnectionId='2' x:Name="GV">
+            <GridView.Header>
+                <Button x:ConnectionId='3' Content="Add Contact" Width="100" Height="40" Margin="0,20,0,0" RelativePanel.Below="TxtBlock"                     />
+            </GridView.Header>
+            <GridView.ItemTemplate>
+                <DataTemplate                          >
+                    <RelativePanel x:ConnectionId='5'>
+                        <FontIcon x:ConnectionId='6'  Margin="30" x:Name="icon" HorizontalAlignment="Left" FontFamily="Segoe MDL2 Assets"                      />
+                        <TextBlock x:ConnectionId='7' Margin="30" RelativePanel.RightOf="icon" x:Name="name"                     />
+                        <TextBlock x:ConnectionId='8' Margin="30" x:Name="sdt" RelativePanel.RightOf="name"                    />
+                        <Button x:ConnectionId='9' Margin="30" RelativePanel.RightOf="sdt"                        Content="X"  />
+                    </RelativePanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+    </Grid>
+</Page>
+

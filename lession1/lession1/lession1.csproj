@@ -122,11 +122,21 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="model\Assignment4_food.cs" />
+    <Compile Include="model\Assignment4_foodList.cs" />
+    <Compile Include="model\Assignment4_menu.cs" />
+    <Compile Include="model\Assignment4_menuItem.cs" />
     <Compile Include="model\Letter.cs" />
     <Compile Include="model\MenuItem.cs" />
     <Compile Include="model\Phone.cs" />
     <Compile Include="pages\AddPhone.xaml.cs">
       <DependentUpon>AddPhone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Assignment4_food_Items.xaml.cs">
+      <DependentUpon>Assignment4_food_Items.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Assignment4_home.xaml.cs">
+      <DependentUpon>Assignment4_home.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\ListPhonexaml.xaml.cs">
       <DependentUpon>ListPhonexaml.xaml</DependentUpon>
@@ -143,6 +153,8 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\food.jpg" />
+    <Content Include="Assets\logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -165,6 +177,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\Assignment4_food_Items.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\Assignment4_home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\ListPhonexaml.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -177,6 +197,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="SQLitePCL">
+      <Version>3.8.7.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

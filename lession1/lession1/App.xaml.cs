@@ -67,7 +67,7 @@ namespace lession1
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(PhoneBook), e.Arguments);
+                    rootFrame.Navigate(typeof(Assignment4_home), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

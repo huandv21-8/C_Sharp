@@ -58,3 +58,14 @@ C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\AddPho
 C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\ListPhonexaml.xaml
 C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\AddPhone.xbf
 C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\ListPhonexaml.xbf
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\pages\Assignment4_home.xbf
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_home.g.i.cs
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_home.g.cs
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_home.xaml
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_home.xbf
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\pages\Assignment4_food_Items.xbf
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_food_Items.g.i.cs
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_food_Items.g.cs
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_food_Items.xaml
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_food_Items.xbf

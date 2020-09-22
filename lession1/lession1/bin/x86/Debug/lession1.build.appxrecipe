@@ -28,14 +28,20 @@
     <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\lession1.exe">
       <PackagePath>entrypoint\lession1.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.10\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\Assets\food.jpg">
+      <PackagePath>Assets\food.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\Assets\logo.png">
+      <PackagePath>Assets\logo.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -64,6 +70,9 @@
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\lession1.xr.xml">
       <PackagePath>lession1.xr.xml</PackagePath>
     </AppxPackagedFile>
@@ -75,6 +84,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\pages\AddPhone.xbf">
       <PackagePath>pages\AddPhone.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\pages\Assignment4_food_Items.xbf">
+      <PackagePath>pages\Assignment4_food_Items.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\pages\Assignment4_home.xbf">
+      <PackagePath>pages\Assignment4_home.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\pages\ListPhonexaml.xbf">
       <PackagePath>pages\ListPhonexaml.xbf</PackagePath>

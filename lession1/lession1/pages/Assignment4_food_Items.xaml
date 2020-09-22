@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="lession1.pages.Assignment4_food_Items"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:lession1.pages"
+    xmlns:Models="using:lession1.model"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="#f0f0f0">
+        <ListView Margin="0,50,0,0" x:Name="MN">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="Models:Assignment4_food" >
+                    <ListViewItem>
+                        <Grid>
+                            <RelativePanel>
+                                <Image  Width="40" Height="40" x:Name="image" HorizontalAlignment="Left" Source="{x:Bind image}"/>
+                                <TextBlock RelativePanel.RightOf="image" x:Name="name" Foreground="Black" VerticalAlignment="Center" Margin="45,0,0,0" Text="{x:Bind name}"/>
+                                <TextBlock Foreground="Black" RelativePanel.RightOf="name" x:Name="des" VerticalAlignment="Center" Margin="45,0,0,0" Text="{x:Bind description}"/>
+                                <TextBlock Foreground="Black" RelativePanel.RightOf="des" VerticalAlignment="Center" Margin="45,0,0,0" Text="{x:Bind price}"/>
+                            </RelativePanel>
+                        </Grid>
+                    </ListViewItem>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Page>

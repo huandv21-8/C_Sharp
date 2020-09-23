@@ -34,13 +34,10 @@
                     <Image x:Name="Logo" Margin="25,-1,0,0" VerticalAlignment="Top" HorizontalAlignment="Right"  Width="100" Height="120" Source="Assets/logo.png"/>
                     <TextBlock RelativePanel.RightOf="Logo" Margin="15,10,0,0" Text="Xin chào, đây là ứng dụng mua thực phẩm"/>
                     <RelativePanel Margin="0,10,0,0" Width="160" RelativePanel.AlignRightWithPanel="True">
-                        <FontIcon x:Name="Alert" FontFamily="Segoe MDL2 Assets" Glyph="&#xE701;"/>
-                        <FontIcon Margin="20,0,0,0" RelativePanel.RightOf="Alert" x:Name="Setting" FontFamily="Segoe MDL2 Assets" Glyph="&#xE713;"/>
-                        <FontIcon Margin="20,0,0,0" RelativePanel.RightOf="Setting"  x:Name="ShutDown" FontFamily="Segoe MDL2 Assets" Glyph="&#xE7E8;"/>
-
-                        <FontIcon Margin="20,0,0,0" RelativePanel.RightOf="ShutDown" Tapped="FontIcon_Tapped"  FontFamily="Segoe MDL2 Assets" Glyph="&#xEB51;"/>
-
-                    </RelativePanel>
+                        <FontIcon Tapped="Alert_Tapped" x:Name="Alert" FontFamily="Segoe MDL2 Assets" Glyph="&#xE80F;"/>
+                        <FontIcon Tapped="Setting_Tapped_1" Margin="20,0,0,0"  RelativePanel.RightOf="Alert" x:Name="Setting" FontFamily="Segoe MDL2 Assets" Glyph="&#xE7BF;"/>
+                        <FontIcon Tapped="ShutDown_Tapped" Margin="20,0,0,0" RelativePanel.RightOf="Setting"  x:Name="ShutDown" FontFamily="Segoe MDL2 Assets" Glyph="&#xEB51;"/>
+                       </RelativePanel>
                 </RelativePanel>
                 <ScrollViewer Grid.Row="1" Margin="10" Loaded="ScrollViewer_Loaded">
                     <Frame Background="#f0f0f0" x:Name="MainFrame"/>

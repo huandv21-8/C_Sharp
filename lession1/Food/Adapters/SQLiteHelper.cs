@@ -1,5 +1,7 @@
-﻿using SQLitePCL;
+﻿using Food.Models;
+using SQLitePCL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,30 @@ namespace Food.Adapters
             }
             return _sQLiteHelper_createTable;
         }
+
+        public static List<Carts> Select_carts()
+        {
+
+            SQLiteHelper sQLiteHelper = createInstance_carts(); //tao bang
+            SQLiteConnection sQLiteConnection = sQLiteHelper.sQLiteConnection;
+
+            var sqlString = "SELECT * FROM Carts";
+            var stt = sQLiteConnection.Prepare(sqlString);
+            List<Carts> arr = new List<Carts>();
+            while (SQLiteResult.ROW == stt.Step())
+            {
+                var id = Convert.ToInt32(stt[0]);
+                var name = (string)stt[1];
+                var image = (string)stt[2];
+                var description = (string)stt[3];
+                var price = Convert.ToInt32(stt[4]);
+                var quantity = Convert.ToInt32(stt[5]);
+
+                arr.Add(new Carts(id, name, image, description, price, quantity));
+            }
+            return arr;
+        }
+
 
         public static SQLiteHelper createInstance_carts()
         {

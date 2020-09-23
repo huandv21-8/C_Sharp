@@ -62,5 +62,22 @@ namespace Food
         {
             MainFrame.Navigate(typeof(Favourite));
         }
+
+      
+
+        private void Alert_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MainFrame.Navigate(typeof(Home));
+        }
+
+        private void Setting_Tapped_1(object sender, TappedRoutedEventArgs e)
+        {
+            MainFrame.Navigate(typeof(cart));
+        }
+
+        private void ShutDown_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MainFrame.Navigate(typeof(Favourite));
+        }
     }
 }

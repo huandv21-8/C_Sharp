@@ -52,5 +52,34 @@ namespace Food.Pages
           //  var x = arr;
             ProductList.ItemsSource = arr;
         }
+
+        private async void xoa_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Product pro = ProductList.SelectedItem as Product;
+
+            ContentDialog deleteFileDialog = new ContentDialog
+            {
+                Title = "Delete product Favourite?",
+                Content = " Do you want to delete it?",
+                PrimaryButtonText = "Delete",
+                CloseButtonText = "Cancel"
+            };
+
+            ContentDialogResult result = await deleteFileDialog.ShowAsync();
+
+            // Delete the file if the user clicked the primary button.
+            /// Otherwise, do nothing.
+            if (result == ContentDialogResult.Primary)
+            {
+                SQLiteHelper sQLiteHelper = SQLiteHelper.createInstance_product(); //tao bang
+                SQLiteConnection sQLiteConnection = sQLiteHelper.sQLiteConnection;
+                var sqlString = "DELETE FROM Products WHERE id = ?";
+                var stt = sQLiteConnection.Prepare(sqlString);
+                stt.Bind(1, pro.id);
+                stt.Step();
+                GetFavourite();
+            }
+           
+        }
     }
 }

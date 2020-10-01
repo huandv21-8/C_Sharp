@@ -69,3 +69,10 @@ C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assign
 C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_food_Items.g.cs
 C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_food_Items.xaml
 C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\pages\Assignment4_food_Items.xbf
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\SQLitePCL.Ext.dll
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\SQLitePCL.Ext.pri
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\bin\x86\Debug\SQLitePCL.dll
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\SQLitePCL\en\SQLitePCL.Resources.resw
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\resources.en.resfiles
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\resources.en.resfiles.intermediate
+C:\Users\crist\Source\Repos\C_Sharp\lession1\lession1\obj\x86\Debug\SQLitePCL.Ext.pri.xml

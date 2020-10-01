@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="Weather.Pages.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Weather.Pages"
+    xmlns:models ="using:Weather.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <RelativePanel Grid.Column="0">
+            <TextBlock Text="{x:Bind Detail.name,}" x:Name="tb1"/>
+            <TextBlock Text="{x:Bind Detail.sys.country}" RelativePanel.RightOf="tb1" x:Name="tb2"/>
+            <TextBlock Text="{x:Bind time}" x:Name="tbDayNow" RelativePanel.Below="tb1" Margin="0,20,0,0"/>
+            <TextBlock Text="{x:Bind Detail.weather[0].description}" x:Name="description" RelativePanel.Below="tbDayNow" Margin="0,10,0,0"/>
+            <Image Source="{x:Bind Detail.weather[0].icon}" RelativePanel.Below="description" Width="100" x:Name="img" Height="100"/>
+            <TextBlock Text="{x:Bind Detail.main.temp}" RelativePanel.RightOf="img" RelativePanel.Below="description" Margin="0,10,0,0" HorizontalTextAlignment="Center" FontSize="50"/>
+            
+        </RelativePanel>
+        <RelativePanel Grid.Column="1" Margin="0,80,0,0">
+            <TextBlock Text="Precipitation :" x:Name="t1"/>
+            <TextBlock Text="{x:Bind Detail.wind.deg}" x:Name="precipitation" RelativePanel.RightOf="t1" Margin="10,0,0,0"/>
+            
+            <TextBlock Text="Humidity :" x:Name="t2" RelativePanel.Below="t1"/>
+            <TextBlock Text="{x:Bind Detail.main.humidity}" RelativePanel.Below="precipitation" x:Name="humidity" RelativePanel.RightOf="t2" Margin="10,0,0,0"/>
+          
+            <TextBlock Text="Wind: " x:Name="t3" RelativePanel.Below="t2"/>
+            <TextBlock Text="{x:Bind Detail.wind.speed}" x:Name="wind" RelativePanel.Below="humidity" RelativePanel.RightOf="t3" Margin="10,0,0,0"/>
+            
+
+        </RelativePanel>
+    </Grid>
+</Page>

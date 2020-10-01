@@ -76,3 +76,11 @@ C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\cart.g.i.c
 C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\cart.g.cs
 C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\cart.xaml
 C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\cart.xbf
+C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\LayoutFavorite.g.i.cs
+C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\LayoutFavorite.g.cs
+C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\ShowCart.g.i.cs
+C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\ShowCart.g.cs
+C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\LayoutFavorite.xaml
+C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\ShowCart.xaml
+C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\LayoutFavorite.xbf
+C:\Users\crist\Source\Repos\C_Sharp\lession1\Food\obj\x86\Debug\Pages\ShowCart.xbf

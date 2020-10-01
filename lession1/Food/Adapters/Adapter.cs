@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Food.Adapters
+namespace Food3.Adapters
 {
     class Adapter
     {
@@ -17,7 +17,11 @@ namespace Food.Adapters
 
         public string CategoryDetail(int id)
         {
-            return  String.Format(baseURL + "/api/category/"+id);
+            return String.Format(baseURL + "/api/category/" + id);
+        }
+        public string ProductDetail(int id)
+        {
+            return String.Format(baseURL + "/api/food/" + id);
         }
     }
 }

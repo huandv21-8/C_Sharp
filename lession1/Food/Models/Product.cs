@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Food.Models
+namespace Food3.Models
 {
-    class Product
+    public class Product
     {
         public Product(int id, string name, string image, string description, int price)
         {
@@ -16,13 +16,12 @@ namespace Food.Models
             this.description = description;
             this.price = price;
         }
-
         public int id { get; set; }
         public string name { get; set; }
         public string image { get; set; }
         public string description { get; set; }
         public int price { get; set; }
-        
+
         public string Price
         {
             get

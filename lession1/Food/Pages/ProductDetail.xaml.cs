@@ -1,30 +1,25 @@
-﻿using Food.Adapters;
-using Food.Models;
+﻿using Food3.Adapters;
+using Food3.Models;
+using Food3.Services;
 using SQLitePCL;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Food.Pages
+namespace Food3.Pages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class ProductDetail : Page
     {
+        private FoodDetailService service = new FoodDetailService();
         public ProductDetail()
         {
             this.InitializeComponent();
@@ -35,7 +30,7 @@ namespace Food.Pages
             get;
             set;
         }
-         
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Detail = e.Parameter as Product;
@@ -43,62 +38,66 @@ namespace Food.Pages
 
         private void BtnLike_Click(object sender, RoutedEventArgs e)
         {
-            SQLiteHelper sQLiteHelper = SQLiteHelper.createInstance_product();
+            
+            FavoriteService.InsertProduct(Detail);
+            MainPage.contentFrame.Navigate(typeof(LayoutFavorite));
+        }
 
-            SQLiteConnection sQLiteConnection = sQLiteHelper.sQLiteConnection;
-            var sqlString = "INSERT INTO Products(id,name,image,description,price) VALUES(?,?,?,?,?)";
-            var stt = sQLiteConnection.Prepare(sqlString);
-            stt.Bind(1, Detail.id);
-            stt.Bind(2, Detail.name);
-            stt.Bind(3, Detail.image);
-            stt.Bind(4, Detail.description);
-            stt.Bind(5, Detail.price);
-            stt.Step();
-            MainPage.mainFrame.Navigate(typeof(Favourite));
+        
+
+        private void btBack(object sender, RoutedEventArgs e)
+        {
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+            }
         }
 
         private void BtnOrder_Click(object sender, RoutedEventArgs e)
         {
-            SQLiteHelper sQLiteHelper = SQLiteHelper.createInstance_carts();
-            SQLiteConnection qLiteConnection = sQLiteHelper.sQLiteConnection;
-            var sqlString = "SELECT * FROM Carts";
-            var stt = qLiteConnection.Prepare(sqlString);
-            List<Carts> arr = new List<Carts>();
-            while (SQLiteResult.ROW == stt.Step())
+            if(TbQuantity.Text != "")
             {
-                var id = Convert.ToInt32(stt[0]);
-                var name = (string)stt[1];
-                var image = (string)stt[2];
-                var description = (string)stt[3];
-                var price = Convert.ToInt32(stt[4]);
-                var quantity = Convert.ToInt32(stt[5]);
 
-                arr.Add(new Carts(id, name, image, description, price,quantity));
+            CartItem item = new CartItem(Detail.id, Detail.name, Detail.image, Detail.price, Convert.ToInt32(TbQuantity.Text));
+            Carts cart = new Carts();
+            cart.AddToCart(item);
+            MainPage.contentFrame.Navigate(typeof(ShowCart));
             }
 
-            string sql = "INSERT INTO Carts(id , name,image,description, price, quantity) VALUES (?,?,?,?,?,?)";
-            int quan = 1;
+            #region 
+            //if (TbQuantity.Text != "")
+            //{
+            //    //check xem đã tồn tại sản phẩm trong giỏ hàng chưa
+            //    int soluong = 0;
+            //    List<Cart> listSelected = AddCartService.getDataCart();
+            //    foreach(var item in listSelected)
+            //    {
+            //        if(item.id == Detail.id)
+            //        {
+            //            soluong = item.Quantity +Convert.ToInt32(TbQuantity.Text);
+            //            break;
+            //        }
+            //    }
+            //    if (soluong !=0)
+            //    {
+            //        AddCartService.updateQuantity(Detail.id, soluong);
+            //        MainPage.contentFrame.Navigate(typeof(ShowCart));
+            //        return;
+            //    }
 
-            foreach(Carts cart in arr)
-            {
-                if(cart.id == Detail.id)
-                {
-                    sql = "UPDATE Carts SET id = ? , name = ? ,image = ?,description = ?, price= ? , quantity = ? where id =" + cart.id;
-                    quan = cart.quantity + 1;
-                }
-              
-            }
+            //    Cart c = new Cart(Detail.id, Detail.name, Detail.image, Detail.description, Detail.price, Convert.ToInt32(TbQuantity.Text));
+            //    AddCartService.AddtoCart(c);
+            //    TbQuantity.Text = "";
+            //    MainPage.contentFrame.Navigate(typeof(ShowCart));
+            //}
 
-            var sttCreate = qLiteConnection.Prepare(sql);
-            sttCreate.Bind(1, Detail.id);
-            sttCreate.Bind(2, Detail.name);
-            sttCreate.Bind(3, Detail.image);
-            sttCreate.Bind(4, Detail.description);
-            sttCreate.Bind(5, Detail.price);
-            sttCreate.Bind(6, quan );
-            sttCreate.Step();
+            #endregion
 
-            MainPage.mainFrame.Navigate(typeof(cart));
+        }
+
+        private void TbQuantity_BeforeTextChanging(TextBox sender, TextBoxBeforeTextChangingEventArgs args)
+        {
+            args.Cancel = args.NewText.Any(c => !char.IsDigit(c));
         }
     }
 }

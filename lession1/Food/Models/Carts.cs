@@ -1,38 +1,95 @@
-﻿using System;
+﻿using Food3.Adapters;
+using SQLitePCL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Food.Models
+namespace Food3.Models
 {
-    class Carts
+    class Carts : CartService
     {
-        public Carts(int id, string name, string image, string description, int price,int quantity)
+        // chứa các funtion service về Cart
+        public bool AddToCart(CartItem item)
         {
-            this.id = id;
-            this.name = name;
-            this.image = image;
-            this.description = description;
-            this.price = price;
-            this.quantity = quantity;
+            SQLiteHelper sQLiteHelper = SQLiteHelper.createInstance_Cart();
+            SQLiteConnection sQLiteConnection = sQLiteHelper.sQLiteConnection;
+            string sqlCommand = "insert into Cartss(id,name,image,price,qty) values(?,?,?,?,?)";
+            var stt = sQLiteConnection.Prepare(sqlCommand);
+            stt.Bind(1, item.id);
+            stt.Bind(2, item.name);
+            stt.Bind(3, item.image);
+            stt.Bind(4, item.price);
+            stt.Bind(5, item.qty);
+            var result = stt.Step();
+            return result == SQLiteResult.OK;
         }
 
-        public int id { get; set; }
-        public string name { get; set; }
-        public string image { get; set; }
-        public string description { get; set; }
-        public int price { get; set; }
-        public int quantity { get; set; }
-
-        public string Price
+        public bool ClearCart()
         {
-            get
+            SQLiteConnection sQLiteConnection = SQLiteHelper.createInstance_Cart().sQLiteConnection;
+            string sqlCommand = "delete from Cartss;";
+            var stt = sQLiteConnection.Prepare(sqlCommand);
+            var result = stt.Step();
+            return result == SQLiteResult.OK;
+        }
+
+        public bool DeleteItem(CartItem item)
+        {
+            SQLiteConnection sQLiteConnection = SQLiteHelper.createInstance_Cart().sQLiteConnection;
+            string sqlCommand = "delete from Cartss where id = ?;";
+            var stt = sQLiteConnection.Prepare(sqlCommand);
+            stt.Bind(1, item.id);
+            var result = stt.Step();
+            return result == SQLiteResult.OK;
+        }
+        public bool DeleteAllItem()
+        {
+            SQLiteConnection sQLiteConnection = SQLiteHelper.createInstance_Cart().sQLiteConnection;
+            string sqlCommand = "delete from Cartss";
+            var stt = sQLiteConnection.Prepare(sqlCommand);
+            
+            var result = stt.Step();
+            return result == SQLiteResult.OK;
+        }
+
+        public List<CartItem> GetCarts()
+        {
+            SQLiteConnection sQLiteConnection = SQLiteHelper.createInstance_Cart().sQLiteConnection;
+            string sqlCommand = "select * from Cartss;";
+            var stt = sQLiteConnection.Prepare(sqlCommand);
+            List<CartItem> list = new List<CartItem>();
+            while (SQLiteResult.ROW == stt.Step())
             {
-                var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
-                return String.Format(info, "{0:c}", price);
-                //String.Format("{0:C}", price);
+                int id = Convert.ToInt32(stt[0]);
+                string name = (string)stt[1];
+                string image = (string)stt[2];
+                int price = Convert.ToInt32(stt[3]);
+                int qty = Convert.ToInt32(stt[4]);
+                list.Add(new CartItem(id, name, image, price, qty));
+            }
+            return list;
+        }
+
+        public bool UpdateQty(CartItem item, int newQty)
+        {
+            if (newQty > 0)
+            {
+                SQLiteConnection sQLiteConnection = SQLiteHelper.createInstance_Cart().sQLiteConnection;
+                string sqlCommand = "update Cartss Set qty = ? where id = ?;";
+                var stt = sQLiteConnection.Prepare(sqlCommand);
+                stt.Bind(1, newQty);
+                stt.Bind(2, item.id);
+                var result = stt.Step();
+                return result == SQLiteResult.OK;
+            }
+            else
+            {
+                return DeleteItem(item);
             }
         }
+
+        
     }
 }

@@ -1,5 +1,5 @@
-﻿using Food.Adapters;
-using Food.Models;
+﻿using Food3.Adapters;
+using Food3.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Food.Services
+namespace Food3.Services
 {
     class CategoryService
     {
@@ -24,7 +24,7 @@ namespace Food.Services
                 var stringContent = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<CategoryDetail>(stringContent);
             }
-                return null;
+            return null;
         }
     }
 }

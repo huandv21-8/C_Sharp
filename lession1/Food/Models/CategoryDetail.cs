@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace Food.Models
+namespace Food3.Models
 {
     class Data
     {
@@ -18,5 +17,5 @@ namespace Food.Models
         public string message { get; set; }
         public Data data { get; set; }
     }
-
 }
+

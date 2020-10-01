@@ -124,29 +124,34 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\Carts.cs" />
     <Compile Include="Models\CategoryDetail.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuItem.cs" />
-    <Compile Include="Models\Carts.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductDetail.cs" />
     <Compile Include="Models\ProductList.cs" />
-    <Compile Include="Pages\cart.xaml.cs">
-      <DependentUpon>cart.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Category.xaml.cs">
       <DependentUpon>Category.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Favourite.xaml.cs">
-      <DependentUpon>Favourite.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LayoutFavorite.xaml.cs">
+      <DependentUpon>LayoutFavorite.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProductDetail.xaml.cs">
       <DependentUpon>ProductDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ShowCart.xaml.cs">
+      <DependentUpon>ShowCart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CartService.cs" />
     <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\FavoriteService.cs" />
+    <Compile Include="Services\FoodDetailService.cs" />
     <Compile Include="Services\ProductServices.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -156,15 +161,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\food.jpg" />
-    <Content Include="Assets\logo.png" />
-    <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\logo.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -175,15 +180,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\cart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\Category.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Favourite.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -191,7 +188,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\LayoutFavorite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\ProductDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ShowCart.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

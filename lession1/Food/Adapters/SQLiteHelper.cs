@@ -1,64 +1,27 @@
-﻿using Food.Models;
-using SQLitePCL;
+﻿using SQLitePCL;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Food.Adapters
+namespace Food3.Adapters
 {
     class SQLiteHelper
     {
         private readonly string DB_Name = "food.db";
-        private static SQLiteHelper _sQLiteHelper_createTable;
-       
+        private static SQLiteHelper _sQLiteHelper;
 
-        public static SQLiteHelper createInstance_product()
+        public static SQLiteHelper createInstance()
         {
-            if(_sQLiteHelper_createTable == null)
+            if (_sQLiteHelper == null)
             {
-                 var sql =  @"CREATE TABLE IF NOT EXISTS Products(id integer primary key, name varchar(200), image varchar(200), description varchar(200), price integer)";
-                _sQLiteHelper_createTable = new SQLiteHelper( sql);
+                var sql = @"CREATE TABLE IF NOT EXISTS Products(id integer primary key, name varchar(200), image varchar(200), description varchar(200), price integer)";
+                _sQLiteHelper = new SQLiteHelper(sql);
             }
-            return _sQLiteHelper_createTable;
+            return _sQLiteHelper;
         }
-
-        public static List<Carts> Select_carts()
-        {
-
-            SQLiteHelper sQLiteHelper = createInstance_carts(); //tao bang
-            SQLiteConnection sQLiteConnection = sQLiteHelper.sQLiteConnection;
-
-            var sqlString = "SELECT * FROM Carts";
-            var stt = sQLiteConnection.Prepare(sqlString);
-            List<Carts> arr = new List<Carts>();
-            while (SQLiteResult.ROW == stt.Step())
-            {
-                var id = Convert.ToInt32(stt[0]);
-                var name = (string)stt[1];
-                var image = (string)stt[2];
-                var description = (string)stt[3];
-                var price = Convert.ToInt32(stt[4]);
-                var quantity = Convert.ToInt32(stt[5]);
-
-                arr.Add(new Carts(id, name, image, description, price, quantity));
-            }
-            return arr;
-        }
-
-
-        public static SQLiteHelper createInstance_carts()
-        {
-            if (_sQLiteHelper_createTable == null)
-            {
-                var sql = @"CREATE TABLE IF NOT EXISTS Carts(id integer primary key, name varchar(200), image varchar(200), description varchar(200), price integer,quantity integer)";
-                _sQLiteHelper_createTable = new SQLiteHelper(sql);
-            }
-            return _sQLiteHelper_createTable;
-        }
-
+        //tao ket noi
         private SQLiteHelper(string sql)
         {
             sQLiteConnection = new SQLiteConnection(DB_Name);
@@ -70,11 +33,24 @@ namespace Food.Adapters
             get;
             private set;
         }
-
+        // tao table
         private void CreateTable(string sql)
         {
+           
             var statement = sQLiteConnection.Prepare(sql);
             statement.Step();
         }
+
+        public static SQLiteHelper createInstance_Cart()
+        {
+            if (_sQLiteHelper == null)
+            {
+                var sql = @"CREATE TABLE IF NOT EXISTS Cartss(id integer primary key, name varchar(200),
+                 image varchar(200), price integer,qty integer)";
+                _sQLiteHelper = new SQLiteHelper(sql);
+            }
+            return _sQLiteHelper;
+        }
+
     }
 }

@@ -25,7 +25,6 @@ namespace Weather.Service
             {
                 var stringContent = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<Root>(stringContent);
-                 
             }
             return null;
         }

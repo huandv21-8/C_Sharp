@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Practical.Models.Employee>
+
+@{
+    ViewBag.Title = "List Employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List Employee</h2>
+
+<p>
+    @Html.ActionLink("Add Employee", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_employee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_employee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id_employee)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name_employee)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Department)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Salary)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id_employee }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id_employee }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id_employee })
+    </td>
+</tr>
+}
+
+</table>
